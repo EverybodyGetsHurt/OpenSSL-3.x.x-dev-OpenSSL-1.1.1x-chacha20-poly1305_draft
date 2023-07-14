@@ -89,7 +89,7 @@ OpenSSL-3.2.0-dev patch adding the 256bits draft version cipher made by D. Berns
 #    - Download the OpenSSL-3.2.0-dev source, extract it and enter the folder, download the patch and apply it:
     git clone git://git.openssl.org/openssl.git
     cd openssl
-    curl -O https://raw.githubusercontent.com/EverybodyGetsHurt/OpenSSL-3.2.0-dev-OpenSSL-1.1.1u-chacha20-poly1305_draft.patch/main/OpenSSL-3.2.0-dev_chacha20-poly1305_draft.patch
+    curl -O https://raw.githubusercontent.com/EverybodyGetsHurt/OpenSSL-3.2.0-dev-OpenSSL-1.1.1u-chacha20-poly1305_draft/master/OpenSSL-3.2.0-dev_chacha20-poly1305_draft.patch
     sudo patch -p1 < OpenSSL-3.2.0-dev_chacha20-poly1305_draft.patch
 
 #    - Set a configuration to build OpenSSL-3.2.0-dev:
