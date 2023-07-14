@@ -134,7 +134,7 @@ OpenSSL-3.2.0-dev patch adding the 256bits draft version cipher made by D. Berns
 #    - Make everything:
     sudo make all
 
-#    - Make all tests:
+#    - Make all tests (Ignore the compression message)
     sudo make test
 
 #    - Install the build:
