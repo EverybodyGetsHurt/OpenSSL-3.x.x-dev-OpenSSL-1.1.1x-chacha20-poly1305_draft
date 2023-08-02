@@ -1,22 +1,22 @@
-#    # OpenSSL-1.1.1u_chacha20-poly1305_draft
-OpenSSL-1.1.1u patch adding the 256bits draft version cipher made by D. Bernstein, supporting Android 5.0.0/Android 6.0 with a 256bits cipher.
+#    # OpenSSL-1.1.1v_chacha20-poly1305_draft
+OpenSSL-1.1.1v patch adding the 256bits draft version cipher made by D. Bernstein, supporting Android 5.0.0/Android 6.0 with a 256bits cipher.
 
 #    - Create a working folder and enter it:
     mkdir /root/.openssl
     cd /root/.openssl
 
-#    - Download the OpenSSL-1.1.1u source, extract it and enter the folder, download the patch and apply it:
-    wget https://www.openssl.org/source/openssl-1.1.1u.tar.gz --no-check-certificate
-    tar xvf openssl-1.1.1u.tar.gz
-    cd openssl-1.1.1u
-    curl -O https://raw.githubusercontent.com/EverybodyGetsHurt/OpenSSL-3.2.0-dev-OpenSSL-1.1.1u-chacha20-poly1305_draft.patch/main/OpenSSL-1.1.1u_chacha20-poly1305_draft.patch
-    sudo patch -p1 < OpenSSL-1.1.1u_chacha20-poly1305_draft.patch
+#    - Download the OpenSSL-1.1.1v source, extract it and enter the folder, download the patch and apply it:
+    wget https://www.openssl.org/source/openssl-1.1.1v.tar.gz --no-check-certificate
+    tar xvf openssl-1.1.1v.tar.gz
+    cd openssl-1.1.1v
+    curl -O https://raw.githubusercontent.com/EverybodyGetsHurt/OpenSSL-3.2.0-dev-OpenSSL-1.1.1v-chacha20-poly1305_draft/master/OpenSSL-1.1.1v_chacha20-poly1305_draft.patch
+    sudo patch -p1 < OpenSSL-1.1.1v_chacha20-poly1305_draft.patch
 
 #    - Set a configuration to build OpenSSL-1.1.1u:
     ./config \
-    --prefix=/usr/local/Gorefest-1.1.1u \
-    --openssldir=/usr/local/Gorefest-1.1.1u/ssl \
-    --libdir=/usr/local/Gorefest-1.1.1u/lib \
+    --prefix=/usr/local/Gorefest-1.1.1v \
+    --openssldir=/usr/local/Gorefest-1.1.1v/ssl \
+    --libdir=/usr/local/Gorefest-1.1.1v/lib \
     -DHAVE_CRYPTODEV -DUSE_CRYPTODEV_DIGESTS \
     enable-shared enable-pinshared enable-heartbeats \
     enable-pic enable-err enable-stdio \
@@ -57,11 +57,11 @@ OpenSSL-1.1.1u patch adding the 256bits draft version cipher made by D. Bernstei
     sudo make install
 
 #    - Set the directories for your custom location:
-    echo 'export PATH=/usr/local/Gorefest-1.1.1u/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH' >> ~/.bashrc
-    echo 'export LD_LIBRARY_PATH=/usr/local/Gorefest-1.1.1u/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
-    echo 'export PERL5LIB=$PERL5LIB:/root/.openssl/openssl-1.1.1u/util/perl' >> ~/.bashrc
-    echo 'export SRCTOP=/root/.openssl/openssl-1.1.1u' >> ~/.bashrc
-    echo 'export BLDTOP=/root/.openssl/openssl-1.1.1u' >> ~/.bashrc
+    echo 'export PATH=/usr/local/Gorefest-1.1.1v/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH' >> ~/.bashrc
+    echo 'export LD_LIBRARY_PATH=/usr/local/Gorefest-1.1.1v/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+    echo 'export PERL5LIB=$PERL5LIB:/root/.openssl/openssl-1.1.1v/util/perl' >> ~/.bashrc
+    echo 'export SRCTOP=/root/.openssl/openssl-1.1.1v' >> ~/.bashrc
+    echo 'export BLDTOP=/root/.openssl/openssl-1.1.1v' >> ~/.bashrc
     source ~/.bashrc
 
 #    - Check if you are using your new installation:
