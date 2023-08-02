@@ -68,14 +68,15 @@ OpenSSL-1.1.1v patch adding the 256bits draft version cipher made by D. Bernstei
     openssl version -a -v
 
 #    - This build's version information would be:
-    OpenSSL 1.1.1u  30 May 2023
-    built on: Sun Jul  9 22:15:47 2023 UTC
+    OpenSSL 1.1.1v  1 Aug 2023
+    built on: Wed Aug  2 16:37:58 2023 UTC
     platform: linux-x86_64
-    options:  bn(64,64) md2(char) rc4(16x,int) des(int) idea(int) blowfish(ptr)
-    compiler: gcc -fPIC -pthread -m64 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -g -Wa,--noexecstack -rdynamic -g -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_IA32_SSE2 -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_MONT5 -DOPENSSL_BN_ASM_GF2m -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DRC4_ASM -DMD5_ASM -DAESNI_ASM -DVPAES_ASM -DGHASH_ASM -DECP_NISTZ256_ASM -DX25519_ASM -DPOLY1305_ASM -DZLIB -DZLIB_SHARED -DNDEBUG
-    OPENSSLDIR: "/usr/local/Benemortasia-1.1.1u/ssl"
-    ENGINESDIR: "/usr/local/Benemortasia-1.1.1u/lib/engines-1.1"
+    options:  bn(64,64) md2(char) rc4(8x,int) des(int) idea(int) blowfish(ptr)
+    compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -rdynamic -I/usr/local/include:-I/usr/local/include: -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_IA32_SSE2 -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_MONT5 -DOPENSSL_BN_ASM_GF2m -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DRC4_ASM -DMD5_ASM -DAESNI_ASM -DVPAES_ASM -DGHASH_ASM -DECP_NISTZ256_ASM -DX25519_ASM -DPOLY1305_ASM -DZLIB -DZLIB_SHARED -DNDEBUG -DHAVE_CRYPTODEV -DUSE_CRYPTODEV_DIGESTS -I/usr/local/include -I/usr/local/include/openssl:-I/usr/local/include -I/usr/local/include/openssl:
+    OPENSSLDIR: "/usr/local/Gorefest-1.1.1v/ssl"
+    ENGINESDIR: "/usr/local/Gorefest-1.1.1v/lib/engines-1.1"
     Seeding source: os-specific
+
 
 #    - Check if the extra ciphers are available:
     openssl ciphers -V -stdname 'ALL:eNULL'
