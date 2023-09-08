@@ -577,7 +577,7 @@ diff -u a/ssl/ssl_local.h b/ssl/ssl_local.h
  /*-
   * SSL_kRSA <- RSA_ENC
 
-diff -u a/util/libcrypto.num ob/util/libcrypto.num
+diff -u a/util/libcrypto.num b/util/libcrypto.num
 --- a/util/libcrypto.num
 +++ b/util/libcrypto.num
 @@ -5427,6 +5427,7 @@
