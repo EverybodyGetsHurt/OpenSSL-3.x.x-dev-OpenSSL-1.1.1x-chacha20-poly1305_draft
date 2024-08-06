@@ -1,20 +1,20 @@
-#    # OpenSSL-1.1.1v_chacha20-poly1305_draft
-OpenSSL-1.1.1v patch adding the 256bits draft version cipher made by D. Bernstein, supporting Android 5.0.0/Android 6.0 with a 256bits cipher.
+#    # OpenSSL-1.1.1x_chacha20-poly1305_draft
+OpenSSL-1.1.1x patch adding the 256bits draft version cipher made by D. Bernstein, supporting Android 5.0.0/Android 6.0 with a 256bits cipher.
 
 #    - Create a working folder and enter it:
     mkdir /root/.openssl
     cd /root/.openssl
 
-#    - Download the OpenSSL-1.1.1v source, extract it and enter the folder, download the patch and apply it:
-    wget https://www.openssl.org/source/openssl-1.1.1v.tar.gz --no-check-certificate
-    tar xvf openssl-1.1.1v.tar.gz
-    cd openssl-1.1.1v
-    curl -O https://raw.githubusercontent.com/EverybodyGetsHurt/OpenSSL-3.2.0-dev-OpenSSL-1.1.1v-chacha20-poly1305_draft/master/OpenSSL-1.1.1v_chacha20-poly1305_draft.patch
-    sudo patch -p1 < OpenSSL-1.1.1v_chacha20-poly1305_draft.patch
+#    - Download the OpenSSL-1.1.1x source, extract it and enter the folder, download the patch and apply it:
+    wget https://www.openssl.org/source/openssl-1.1.1w.tar.gz --no-check-certificate
+    tar xvf openssl-1.1.1w.tar.gz
+    cd openssl-1.1.1w
+    curl -O https://raw.githubusercontent.com/EverybodyGetsHurt/OpenSSL-3.x.x-dev-OpenSSL-1.1.1x-chacha20-poly1305_draft/master/OpenSSL-1.1.1w_chacha20-poly1305_draft.patch
+    sudo patch -p1 < OpenSSL-1.1.1w_chacha20-poly1305_draft.patch
 
-#    - Set a configuration to build OpenSSL-1.1.1u:
+#    - Set a configuration to build OpenSSL-1.1.1w:
     ./config \
-    --prefix=/usr/local/Gorefest-1.1.1v \
+    --prefix=/usr/local/Gorefest-1.1.1w \
     --openssldir=/usr/local/Gorefest-1.1.1v/ssl \
     --libdir=/usr/local/Gorefest-1.1.1v/lib \
     -DHAVE_CRYPTODEV -DUSE_CRYPTODEV_DIGESTS \
@@ -57,24 +57,24 @@ OpenSSL-1.1.1v patch adding the 256bits draft version cipher made by D. Bernstei
     sudo make install
 
 #    - Set the directories for your custom location:
-    echo 'export PATH=/usr/local/Gorefest-1.1.1v/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH' >> ~/.bashrc
-    echo 'export LD_LIBRARY_PATH=/usr/local/Gorefest-1.1.1v/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
-    echo 'export PERL5LIB=$PERL5LIB:/root/.openssl/openssl-1.1.1v/util/perl' >> ~/.bashrc
-    echo 'export SRCTOP=/root/.openssl/openssl-1.1.1v' >> ~/.bashrc
-    echo 'export BLDTOP=/root/.openssl/openssl-1.1.1v' >> ~/.bashrc
+    echo 'export PATH=/usr/local/Gorefest-1.1.1w/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH' >> ~/.bashrc
+    echo 'export LD_LIBRARY_PATH=/usr/local/Gorefest-1.1.1w/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+    echo 'export PERL5LIB=$PERL5LIB:/root/.openssl/openssl-1.1.1w/util/perl' >> ~/.bashrc
+    echo 'export SRCTOP=/root/.openssl/openssl-1.1.1w' >> ~/.bashrc
+    echo 'export BLDTOP=/root/.openssl/openssl-1.1.1w' >> ~/.bashrc
     source ~/.bashrc
 
 #    - Check if you are using your new installation:
     openssl version -a -v
 
 #    - This build's version information would be:
-    OpenSSL 1.1.1v  1 Aug 2023
-    built on: Wed Aug  2 16:37:58 2023 UTC
+    OpenSSL 1.1.1w  31 Jul 2024
+    built on: Wed Jul 31 16:37:58 2023 UTC
     platform: linux-x86_64
     options:  bn(64,64) md2(char) rc4(8x,int) des(int) idea(int) blowfish(ptr)
     compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -rdynamic -I/usr/local/include:-I/usr/local/include: -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_IA32_SSE2 -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_MONT5 -DOPENSSL_BN_ASM_GF2m -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DRC4_ASM -DMD5_ASM -DAESNI_ASM -DVPAES_ASM -DGHASH_ASM -DECP_NISTZ256_ASM -DX25519_ASM -DPOLY1305_ASM -DZLIB -DZLIB_SHARED -DNDEBUG -DHAVE_CRYPTODEV -DUSE_CRYPTODEV_DIGESTS -I/usr/local/include -I/usr/local/include/openssl:-I/usr/local/include -I/usr/local/include/openssl:
-    OPENSSLDIR: "/usr/local/Gorefest-1.1.1v/ssl"
-    ENGINESDIR: "/usr/local/Gorefest-1.1.1v/lib/engines-1.1"
+    OPENSSLDIR: "/usr/local/Gorefest-1.1.1w/ssl"
+    ENGINESDIR: "/usr/local/Gorefest-1.1.1w/lib/engines-1.1"
     Seeding source: os-specific
 
 
@@ -84,23 +84,24 @@ OpenSSL-1.1.1v patch adding the 256bits draft version cipher made by D. Bernstei
 
 
 
-#    # OpenSSL-3.2.0-dev_chacha20-poly1305_draft
-OpenSSL-3.2.0-dev patch adding the 256bits draft version cipher made by D. Bernstein, supporting Android 5.0.0/Android 6.0 with a 256bits cipher.
+#    # OpenSSL-3.4.0-dev_chacha20-poly1305_draft
+OpenSSL-3.4.0-dev patch adding the 256bits draft version cipher made by D. Bernstein, supporting Android 5.0.0/Android 6.0 with a 256bits cipher.
 
-#    - Download the OpenSSL-3.2.0-dev source, extract it and enter the folder, download the patch and apply it:
+#    - Download the OpenSSL-3.4.0-dev source, extract it and enter the folder, download the patch and apply it:
     git clone git://git.openssl.org/openssl.git
     cd openssl
-    curl -O https://raw.githubusercontent.com/EverybodyGetsHurt/OpenSSL-3.2.0-dev-OpenSSL-1.1.1u-chacha20-poly1305_draft/master/OpenSSL-3.2.0-dev_chacha20-poly1305_draft.patch
-    sudo patch -p1 < OpenSSL-3.2.0-dev_chacha20-poly1305_draft.patch
+    curl -O https://raw.githubusercontent.com/EverybodyGetsHurt/OpenSSL-3.x.x-dev-OpenSSL-1.1.1x-chacha20-poly1305_draft/master/OpenSSL-3.4.0-dev_chacha20-poly1305_draft.patch
+    sudo patch -p1 < OpenSSL-3.4.0-dev_chacha20-poly1305_draft.patch
 
-#    - Set a configuration to build OpenSSL-3.2.0-dev:
+#    - Set a configuration to build OpenSSL-3.4.0-dev:
     ./config \
-    --api=1.1.0 \
-    --prefix=/usr/local/Gorefest-3.2.0 \
-    --openssldir=/usr/local/Gorefest-3.2.0/ssl \
-    --libdir=/usr/local/Gorefest-3.2.0/lib \
-    --banner="Gorefest-3.2.0" \
+    --prefix=/usr/local/Gorefest-3.4.0 \
+    --openssldir=/usr/local/Gorefest-3.4.0/ssl \
+    --libdir=/usr/local/Gorefest-3.4.0/lib \
+    --banner="Gorefest-3.4.0" \
     -DHAVE_CRYPTODEV -DUSE_CRYPTODEV_DIGESTS \
+    -DWITH_LZO -DWITH_BZIP2 -DWITH_BROTLI -DWITH_ZSTD \
+    -DASYNC_ENABLE -DOPENSSL_USE_TLS1_3 -DOPENSSL_USE_AESNI -DOPENSSL_ENABLE_MD5_SHA1 -DOPENSSL_USE_AESNI -DOPENSSL_USE_GCM_CRYPTO \
     enable-shared enable-pinshared enable-heartbeats \
     enable-pic enable-err enable-stdio enable-fips \
     enable-idea enable-seed enable-scrypt enable-rdrand \
@@ -120,7 +121,7 @@ OpenSSL-3.2.0-dev patch adding the 256bits draft version cipher made by D. Berns
     enable-srp enable-sse2 enable-psk enable-rfc3779 \
     enable-weak-ssl-ciphers enable-ssl3 enable-ssl3-method \
     enable-dtls enable-ec2m enable-dtls1 enable-dtls1_2-method \
-    enable-camellia enable-chacha enable-poly1305 enable-gost \
+    enable-camellia enable-chacha enable-poly1305 \
     enable-ec enable-ecdh enable-ecdsa enable-whirlpool \
     enable-rmd160 enable-aria enable-blake2 enable-tfo \
     enable-des enable-dh enable-dsa enable-dso enable-ts \
@@ -128,9 +129,10 @@ OpenSSL-3.2.0-dev patch adding the 256bits draft version cipher made by D. Berns
     enable-md2 enable-md4 enable-mdc2 enable-rc2 enable-rc4 \
     enable-rc5 enable-sm2 enable-sm3 enable-sm4 enable-legacy \
     enable-secure-memory enable-loadereng enable-padlockeng \
-    enable-sctp enable-bulk enable-cached-fetch enable-http \
-    enable-ecx enable-thread-pool enable-default-thread-pool \
-    enable-crypto-mdebug enable-crypto-mdebug-backtrace
+    enable-bulk enable-cached-fetch enable-http enable-ecx \
+    enable-thread-pool enable-default-thread-pool \
+    enable-crypto-mdebug enable-crypto-mdebug-backtrace \
+    enable-sctp
     
 #    - Make everything:
     sudo make all
@@ -142,28 +144,27 @@ OpenSSL-3.2.0-dev patch adding the 256bits draft version cipher made by D. Berns
     sudo make install
 
 #    - Set the directories for your custom location:
-    echo 'export PATH=/usr/local/Gorefest-3.2.0-dev/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH' >> ~/.bashrc
-    echo 'export LD_LIBRARY_PATH=/usr/local/Gorefest-3.2.0-dev/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
-    echo 'export PERL5LIB=$PERL5LIB:/root/.openssl/openssl-3.2.0-dev/util/perl' >> ~/.bashrc
-    echo 'export SRCTOP=/root/.openssl/openssl' >> ~/.bashrc
-    echo 'export BLDTOP=/root/.openssl/openssl' >> ~/.bashrc
+    echo 'export PATH=/usr/local/Gorefest-3.4.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH' >> ~/.bashrc
+    echo 'export LD_LIBRARY_PATH=/usr/local/Gorefest-3.4.0/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+    echo 'export PERL5LIB=$PERL5LIB:/root/.OpenSSL/openssl/util/perl' >> ~/.bashrc
+    echo 'export SRCTOP=/root/.OpenSSL/openssl' >> ~/.bashrc
+    echo 'export BLDTOP=/root/.OpenSSL/openssl' >> ~/.bashrc
     source ~/.bashrc
 
 #    - Check if you are using your new installation:
     openssl version -a -v
 
 #    - This build's version information would be:
-    OpenSSL 3.2.0-dev  (Library: OpenSSL 3.2.0-dev )
-    built on: Fri Jul 14 14:02:37 2023 UTC
+    OpenSSL 3.4.0-dev  (Library: OpenSSL 3.4.0-dev )
+    built on: Tue Aug  6 17:06:20 2024 UTC
     platform: linux-x86_64
     options:  bn(64,64)
-    compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -O3 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DBROTLI -DBROTLI_SHARED -DZLIB -DZLIB_SHARED -DZSTD -DZSTD_SHARED -DNDEBUG -DHAVE_CRYPTODEV -DUSE_CRYPTODEV_DIGESTS
-    OPENSSLDIR: "/usr/local/Gorefest-3.2.0/ssl"
-    ENGINESDIR: "/usr/local/Gorefest-3.2.0/lib/engines-3"
-    MODULESDIR: "/usr/local/Gorefest-3.2.0/lib/ossl-modules"
+    compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -O3 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DBROTLI -DBROTLI_SHARED -DZLIB -DZLIB_SHARED -DZSTD -DZSTD_SHARED -DNDEBUG -DHAVE_CRYPTODEV -DUSE_CRYPTODEV_DIGESTS -DWITH_LZO -DWITH_BZIP2 -DWITH_BROTLI -DWITH_ZSTD -DASYNC_ENABLE -DOPENSSL_USE_TLS1_3 -DOPENSSL_USE_AESNI -DOPENSSL_ENABLE_MD5_SHA1 -DOPENSSL_USE_AESNI -DOPENSSL_USE_GCM_CRYPTO
+    OPENSSLDIR: /usr/local/Gorefest-3.4.0/ssl
+    ENGINESDIR: /usr/local/Gorefest-3.4.0/lib/engines-3
+    MODULESDIR: /usr/local/Gorefest-3.4.0/lib/ossl-modules
     Seeding source: os-specific
     CPUINFO: OPENSSL_ia32cap=0xfefa3203078bffff:0x40001c219c05a9
-    root@youbetteravoid:~/.compile/nginx-1.25.0#
 
 #    - Check if the extra ciphers are available:
     openssl ciphers -V -stdname 'ALL:eNULL'
