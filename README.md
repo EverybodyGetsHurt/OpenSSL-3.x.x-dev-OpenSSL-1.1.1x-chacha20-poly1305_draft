@@ -15,8 +15,8 @@ OpenSSL-1.1.1x patch adding the 256bits draft version cipher made by D. Bernstei
 #    - Set a configuration to build OpenSSL-1.1.1w:
     ./config \
     --prefix=/usr/local/Gorefest-1.1.1w \
-    --openssldir=/usr/local/Gorefest-1.1.1v/ssl \
-    --libdir=/usr/local/Gorefest-1.1.1v/lib \
+    --openssldir=/usr/local/Gorefest-1.1.1w/ssl \
+    --libdir=/usr/local/Gorefest-1.1.1w/lib \
     -DHAVE_CRYPTODEV -DUSE_CRYPTODEV_DIGESTS \
     enable-shared enable-pinshared enable-heartbeats \
     enable-pic enable-err enable-stdio \
